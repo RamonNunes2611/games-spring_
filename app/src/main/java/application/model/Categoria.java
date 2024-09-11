@@ -2,7 +2,6 @@ package application.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.annotation.processing.Generated;
 
 import jakarta.persitence.Column;
 import jakarta.persitence.Entity;
@@ -14,18 +13,33 @@ import jakarta.persitence.Table;
 
 @Entinty
 @Table (name = "categorias")
-public class categorias{
+public class categorias {
     @Id 
     @GeneratedValues(strategy = GerantionType.INDENTIFY) 
     private long id;
-    @Column (unique = true , nullable = false)
+    @Column (unique = true, nullable = false)
     private String nome;
+
+    @OneToMany(mappedBy = "categoria")
+    private Set<Jogos> jogos = new HashSet<>();
+
     
-public void setId(long id) {
-    this.id = id;
-}public long getId() {
+    public long getId() {
     return id;
-}
-
-
+    }
+    public void setId(long id){
+    this.id = id;
+    }
+    public String getNome() {
+    return nome;
+    }
+    public void setNome(String nome){
+    this.nome = nome;
+    }
+    public Set<Jogo> getJogos(){
+    return jogos;
+    }
+    public void setJogos(Set<Jogo> jogos){
+    this.jogos = jogos;
+    }
 }

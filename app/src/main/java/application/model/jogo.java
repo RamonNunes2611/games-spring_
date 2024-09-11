@@ -1,8 +1,8 @@
 package application.model;
+
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.annotation.processing.Generated;
 
 import jakarta.persitence.Column;
 import jakarta.persitence.Entity;
