@@ -38,9 +38,33 @@ public class Jogo{
         return id;
     }
 
+    public void setId() {
+        return id;   
+    }
+
     public String getTitulo() {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Set<Plataforma> getPlataforma() {
+        return plataformas;
+    }
+
+    public void setPlataformas(Set<plataforma> plataformas) {
+        this.plataformas = plataformas;
+    }
+}
     
  
