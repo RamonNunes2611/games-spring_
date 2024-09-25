@@ -3,49 +3,48 @@ package application.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persitence.Column;
-import jakarta.persitence.Entity;
-import jakarta.persitence.GeneratedValues;
-import jakarta.persitence.GerantionType;
-import jakarta.persitence.Id;
-import jakarta.persitence.OneToMany;
-import jakarta.persitence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 
-@Entinty
-@Table (name = "plataformas")
-public class plataforma {
-    @Id 
-    @GeneratedValues(strategy = GerantionType.INDENTIFY) 
-    private long id;
-    @Column (unique = true, nullable = false)
-    private String nome;
+@Entity
+@Table(name = "plataformas")
+public class Plataforma {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
+  
+  @Column(unique = true, nullable = false)
+  private String nome;
 
-    @ManyToMany(mappedBy = "plataformas")
-    private Set<Jogos> jogos = new HashSet<>();
+  @ManyToMany(mappedBy = "plataformas")
+  private Set<Jogo> jogos = new HashSet<>();
 
-    public long getId() {
-        return id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public Set<Jogos> getJogos() {
-        return jogos;
-    }
+  public Set<Jogo> getJogos() {
+    return jogos;
+  }
 
-    public void setJogos(Set<Jogos> jogos) {
-        this.jogos = jogos:
-    }
+  public void setJogos(Set<Jogo> jogos) {
+    this.jogos = jogos;
+  }
 }
-
-
